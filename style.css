@@ -1,0 +1,128 @@
+/* Base Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav li {
+  margin-left: 20px;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Hamburger icon styling */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  width: 25px;
+  height: 20px;
+  justify-content: space-between;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Animation for active (turn into X) */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.container {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+.column {
+  flex: 1;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.footer {
+  background-color: #222;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  /* Slide menu animation */
+  .nav {
+    overflow: hidden;
+    max-height: 0;
+    background-color: #333;
+    transition: max-height 0.3s ease-out;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .nav li {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  .column {
+    font-size: 0.95rem;
+  }
+
+  /* Show menu when active */
+  .nav.active {
+    max-height: 300px;
+    transition: max-height 0.3s ease-in;
+  }
+}
